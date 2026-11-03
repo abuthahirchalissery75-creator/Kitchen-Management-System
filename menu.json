@@ -1,0 +1,642 @@
+[
+ {
+  "name": "Shawai (Kubboos)",
+  "category": "Shawai",
+  "price": 140
+ },
+ {
+  "name": "Shawai (Rumali)",
+  "category": "Shawai",
+  "price": 150
+ },
+ {
+  "name": "Masala Shawai (Kubboos)",
+  "category": "Shawai",
+  "price": 170
+ },
+ {
+  "name": "Masala Shawai (Rumali)",
+  "category": "Shawai",
+  "price": 180
+ },
+ {
+  "name": "Masala Shawai Special (Kubboos)",
+  "category": "Shawai",
+  "price": 180
+ },
+ {
+  "name": "Masala Shawai Special (Rumali)",
+  "category": "Shawai",
+  "price": 190
+ },
+ {
+  "name": "Peri Peri Shawai (Kubboos)",
+  "category": "Shawai",
+  "price": 170
+ },
+ {
+  "name": "Peri Peri Shawai (Rumali)",
+  "category": "Shawai",
+  "price": 180
+ },
+ {
+  "name": "BBQ Shawai (Kubboos)",
+  "category": "Shawai",
+  "price": 180
+ },
+ {
+  "name": "BBQ Shawai (Rumali)",
+  "category": "Shawai",
+  "price": 190
+ },
+ {
+  "name": "Honey Chilli Shawai (Kubboos)",
+  "category": "Shawai",
+  "price": 180
+ },
+ {
+  "name": "Honey Chilli Shawai (Rumali)",
+  "category": "Shawai",
+  "price": 190
+ },
+ {
+  "name": "Mexican Shawai (Kubboos)",
+  "category": "Shawai",
+  "price": 190
+ },
+ {
+  "name": "Mexican Shawai (Rumali)",
+  "category": "Shawai",
+  "price": 200
+ },
+ {
+  "name": "Cheesy Shawai (Kubboos)",
+  "category": "Shawai",
+  "price": 190
+ },
+ {
+  "name": "Cheesy Shawai (Rumali)",
+  "category": "Shawai",
+  "price": 210
+ },
+ {
+  "name": "Normal Alfaham",
+  "category": "Alfaham",
+  "price": 150
+ },
+ {
+  "name": "Spicy Alfaham",
+  "category": "Alfaham",
+  "price": 160
+ },
+ {
+  "name": "Pepper Alfaham",
+  "category": "Alfaham",
+  "price": 170
+ },
+ {
+  "name": "Peri Peri Alfaham",
+  "category": "Alfaham",
+  "price": 170
+ },
+ {
+  "name": "BBQ Alfaham",
+  "category": "Alfaham",
+  "price": 190
+ },
+ {
+  "name": "Honey Chilli Alfaham",
+  "category": "Alfaham",
+  "price": 190
+ },
+ {
+  "name": "Mexican Alfaham",
+  "category": "Alfaham",
+  "price": 190
+ },
+ {
+  "name": "Cheesy Alfaham",
+  "category": "Alfaham",
+  "price": 190
+ },
+ {
+  "name": "Kanthari Alfaham",
+  "category": "Alfaham",
+  "price": 200
+ },
+ {
+  "name": "Polichathu Alfaham",
+  "category": "Alfaham",
+  "price": 220
+ },
+ {
+  "name": "Parotta",
+  "category": "Add-ons",
+  "price": 16
+ },
+ {
+  "name": "Rumali",
+  "category": "Add-ons",
+  "price": 16
+ },
+ {
+  "name": "Kubboos",
+  "category": "Add-ons",
+  "price": 12
+ },
+ {
+  "name": "Noodles (Veg)",
+  "category": "Chinese",
+  "price": 120
+ },
+ {
+  "name": "Noodles (Egg)",
+  "category": "Chinese",
+  "price": 140
+ },
+ {
+  "name": "Noodles (Chicken)",
+  "category": "Chinese",
+  "price": 160
+ },
+ {
+  "name": "Noodles (Mix)",
+  "category": "Chinese",
+  "price": 170
+ },
+ {
+  "name": "Fried Rice (Veg)",
+  "category": "Chinese",
+  "price": 120
+ },
+ {
+  "name": "Fried Rice (Egg)",
+  "category": "Chinese",
+  "price": 140
+ },
+ {
+  "name": "Fried Rice (Chicken)",
+  "category": "Chinese",
+  "price": 160
+ },
+ {
+  "name": "Fried Rice (Mix)",
+  "category": "Chinese",
+  "price": 170
+ },
+ {
+  "name": "Chilli Chicken",
+  "category": "Chinese",
+  "price": 150
+ },
+ {
+  "name": "Ginger Chicken",
+  "category": "Chinese",
+  "price": 160
+ },
+ {
+  "name": "Garlic Chicken",
+  "category": "Chinese",
+  "price": 170
+ },
+ {
+  "name": "Pepper Chicken",
+  "category": "Chinese",
+  "price": 200
+ },
+ {
+  "name": "Dragon Chicken",
+  "category": "Chinese",
+  "price": 190
+ },
+ {
+  "name": "Shawarma Kubboos (Roll)",
+  "category": "Shawarma",
+  "price": 99
+ },
+ {
+  "name": "Shawarma Kubboos (Plate)",
+  "category": "Shawarma",
+  "price": 120
+ },
+ {
+  "name": "Shawarma Rumali (Roll)",
+  "category": "Shawarma",
+  "price": 120
+ },
+ {
+  "name": "Shawarma Rumali (Plate)",
+  "category": "Shawarma",
+  "price": 140
+ },
+ {
+  "name": "Shawarma Full Meat Kubboos (Roll)",
+  "category": "Shawarma",
+  "price": 130
+ },
+ {
+  "name": "Shawarma Full Meat Kubboos (Plate)",
+  "category": "Shawarma",
+  "price": 150
+ },
+ {
+  "name": "Shawarma Full Meat Rumali (Roll)",
+  "category": "Shawarma",
+  "price": 140
+ },
+ {
+  "name": "Shawarma Full Meat Rumali (Plate)",
+  "category": "Shawarma",
+  "price": 150
+ },
+ {
+  "name": "Shawarma Peri Peri Kubboos (Roll)",
+  "category": "Shawarma",
+  "price": 150
+ },
+ {
+  "name": "Shawarma Peri Peri Kubboos (Plate)",
+  "category": "Shawarma",
+  "price": 160
+ },
+ {
+  "name": "Shawarma Peri Peri Rumali (Roll)",
+  "category": "Shawarma",
+  "price": 160
+ },
+ {
+  "name": "Shawarma Peri Peri Rumali (Plate)",
+  "category": "Shawarma",
+  "price": 170
+ },
+ {
+  "name": "Shawarma Cheesy Kubboos (Roll)",
+  "category": "Shawarma",
+  "price": 160
+ },
+ {
+  "name": "Shawarma Cheesy Kubboos (Plate)",
+  "category": "Shawarma",
+  "price": 170
+ },
+ {
+  "name": "Shawarma Pepper Rumali (Roll)",
+  "category": "Shawarma",
+  "price": 160
+ },
+ {
+  "name": "Shawarma Pepper Rumali (Plate)",
+  "category": "Shawarma",
+  "price": 170
+ },
+ {
+  "name": "Shawarma Jamaican Kubboos (Roll)",
+  "category": "Shawarma",
+  "price": 170
+ },
+ {
+  "name": "Shawarma Jamaican Kubboos (Plate)",
+  "category": "Shawarma",
+  "price": 180
+ },
+ {
+  "name": "Shawarma Jamaican Rumali (Roll)",
+  "category": "Shawarma",
+  "price": 180
+ },
+ {
+  "name": "Shawarma Jamaican Rumali (Plate)",
+  "category": "Shawarma",
+  "price": 190
+ },
+ {
+  "name": "Shawarma BBQ Rumali (Roll)",
+  "category": "Shawarma",
+  "price": 180
+ },
+ {
+  "name": "Shawarma BBQ Rumali (Plate)",
+  "category": "Shawarma",
+  "price": 190
+ },
+ {
+  "name": "Shawarma Honey Chilli Kubboos (Roll)",
+  "category": "Shawarma",
+  "price": 180
+ },
+ {
+  "name": "Shawarma Honey Chilli Kubboos (Plate)",
+  "category": "Shawarma",
+  "price": 190
+ },
+ {
+  "name": "Shawarma Honey Chilli Rumali (Roll)",
+  "category": "Shawarma",
+  "price": 180
+ },
+ {
+  "name": "Shawarma Honey Chilli Rumali (Plate)",
+  "category": "Shawarma",
+  "price": 190
+ },
+ {
+  "name": "Shawarma Mexican Kubboos (Roll)",
+  "category": "Shawarma",
+  "price": 140
+ },
+ {
+  "name": "Shawarma Mexican Kubboos (Plate)",
+  "category": "Shawarma",
+  "price": 190
+ },
+ {
+  "name": "Shawarma Mexican Rumali (Roll)",
+  "category": "Shawarma",
+  "price": 140
+ },
+ {
+  "name": "Shawarma Mexican Rumali (Plate)",
+  "category": "Shawarma",
+  "price": 190
+ },
+ {
+  "name": "Normal Alfaham Mandi (Quarter)",
+  "category": "Mandi",
+  "price": 240
+ },
+ {
+  "name": "Spicy Alfaham Mandi (Quarter)",
+  "category": "Mandi",
+  "price": 250
+ },
+ {
+  "name": "Pepper Alfaham Mandi (Quarter)",
+  "category": "Mandi",
+  "price": 270
+ },
+ {
+  "name": "Peri Peri Alfaham Mandi (Quarter)",
+  "category": "Mandi",
+  "price": 260
+ },
+ {
+  "name": "BBQ Alfaham Mandi (Quarter)",
+  "category": "Mandi",
+  "price": 270
+ },
+ {
+  "name": "Mexican Alfaham Mandi (Quarter)",
+  "category": "Mandi",
+  "price": 270
+ },
+ {
+  "name": "Honey Chilli Alfaham Mandi (Quarter)",
+  "category": "Mandi",
+  "price": 280
+ },
+ {
+  "name": "Cheesy Alfaham Mandi (Quarter)",
+  "category": "Mandi",
+  "price": 280
+ },
+ {
+  "name": "Jamaican Alfaham Mandi (Quarter)",
+  "category": "Mandi",
+  "price": 290
+ },
+ {
+  "name": "Pollichathu Alfaham Mandi (Quarter)",
+  "category": "Mandi",
+  "price": 320
+ },
+ {
+  "name": "Kanthari Alfaham Mandi (Quarter)",
+  "category": "Mandi",
+  "price": 300
+ },
+ {
+  "name": "Normal Shawai Mandi (Quarter)",
+  "category": "Mandi",
+  "price": 190
+ },
+ {
+  "name": "Masala Shawai Mandi (Quarter)",
+  "category": "Mandi",
+  "price": 240
+ },
+ {
+  "name": "Masala Shawai Special Mandi (Quarter)",
+  "category": "Mandi",
+  "price": 250
+ },
+ {
+  "name": "Peri Peri Shawai Mandi (Quarter)",
+  "category": "Mandi",
+  "price": 220
+ },
+ {
+  "name": "BBQ Shawai Mandi (Quarter)",
+  "category": "Mandi",
+  "price": 240
+ },
+ {
+  "name": "Honey Chilli Shawai Mandi (Quarter)",
+  "category": "Mandi",
+  "price": 260
+ },
+ {
+  "name": "Mexican Shawai Mandi (Quarter)",
+  "category": "Mandi",
+  "price": 250
+ },
+ {
+  "name": "Cheesy Shawai Mandi (Quarter)",
+  "category": "Mandi",
+  "price": 260
+ },
+ {
+  "name": "Normal Beef (Quarter)",
+  "category": "Mandi",
+  "price": 299
+ },
+ {
+  "name": "Beef Rib Mandi (Quarter)",
+  "category": "Mandi",
+  "price": 320
+ },
+ {
+  "name": "Pepper Beef Mandi (Quarter)",
+  "category": "Mandi",
+  "price": 340
+ },
+ {
+  "name": "Extra Half Rice",
+  "category": "Add-ons",
+  "price": 70
+ },
+ {
+  "name": "Extra Full Rice",
+  "category": "Add-ons",
+  "price": 120
+ },
+ {
+  "name": "Angoor Shake",
+  "category": "Angoor Special Shake",
+  "price": 80
+ },
+ {
+  "name": "Abooda Shake",
+  "category": "Angoor Special Shake",
+  "price": 80
+ },
+ {
+  "name": "Masura Shake",
+  "category": "Angoor Special Shake",
+  "price": 80
+ },
+ {
+  "name": "Noora Shake",
+  "category": "Angoor Special Shake",
+  "price": 80
+ },
+ {
+  "name": "Sarjha Shake",
+  "category": "Angoor Special Shake",
+  "price": 60
+ },
+ {
+  "name": "Saboora Shake",
+  "category": "Angoor Special Shake",
+  "price": 80
+ },
+ {
+  "name": "Mango Shake",
+  "category": "Angoor Special Shake",
+  "price": 80
+ },
+ {
+  "name": "Strawberry Shake",
+  "category": "Angoor Special Shake",
+  "price": 80
+ },
+ {
+  "name": "Dragon Shake",
+  "category": "Angoor Special Shake",
+  "price": 80
+ },
+ {
+  "name": "Karachi Shake",
+  "category": "Angoor Special Shake",
+  "price": 80
+ },
+ {
+  "name": "Maria Shake",
+  "category": "Angoor Special Shake",
+  "price": 80
+ },
+ {
+  "name": "Apria Shake",
+  "category": "Angoor Special Shake",
+  "price": 80
+ },
+ {
+  "name": "Jackfruit Shake",
+  "category": "Angoor Special Shake",
+  "price": 80
+ },
+ {
+  "name": "Grape Shake",
+  "category": "Angoor Special Shake",
+  "price": 70
+ },
+ {
+  "name": "Tender Coconut Shake",
+  "category": "Angoor Special Shake",
+  "price": 80
+ },
+ {
+  "name": "Fresh Lime",
+  "category": "Juices",
+  "price": 30
+ },
+ {
+  "name": "Mint Lime",
+  "category": "Juices",
+  "price": 40
+ },
+ {
+  "name": "Pineapple Lime",
+  "category": "Juices",
+  "price": 50
+ },
+ {
+  "name": "Grape Lime",
+  "category": "Juices",
+  "price": 50
+ },
+ {
+  "name": "Ginger Lime",
+  "category": "Juices",
+  "price": 50
+ },
+ {
+  "name": "Pineapple Juice",
+  "category": "Juices",
+  "price": 60
+ },
+ {
+  "name": "Grape Juice",
+  "category": "Juices",
+  "price": 60
+ },
+ {
+  "name": "Green Apple Mojito",
+  "category": "Mojito",
+  "price": 80
+ },
+ {
+  "name": "Passion Fruit Mojito",
+  "category": "Mojito",
+  "price": 80
+ },
+ {
+  "name": "Virgin Mojito",
+  "category": "Mojito",
+  "price": 80
+ },
+ {
+  "name": "Blue Lagoon Mojito",
+  "category": "Mojito",
+  "price": 80
+ },
+ {
+  "name": "Pina Colada Mojito",
+  "category": "Mojito",
+  "price": 100
+ },
+ {
+  "name": "Lemon Tea",
+  "category": "Hot Beverages",
+  "price": 20
+ },
+ {
+  "name": "Black Tea",
+  "category": "Hot Beverages",
+  "price": 15
+ },
+ {
+  "name": "Mint Tea",
+  "category": "Hot Beverages",
+  "price": 25
+ },
+ {
+  "name": "Coffee",
+  "category": "Hot Beverages",
+  "price": 20
+ },
+ {
+  "name": "Cold Coffee",
+  "category": "Hot Beverages",
+  "price": 50
+ }
+]

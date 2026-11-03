@@ -1,0 +1,185 @@
+/* Kitchen board theme: near-black glass (Poppins). Loaded only by kitchen.html. */
+@font-face { font-family: 'PoppinsX'; font-weight: 400; src: url(/fonts/poppins-latin-400-normal.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2190-2193, U+2212, U+2215, U+FEFF, U+FFFD; font-display: swap; }
+@font-face { font-family: 'PoppinsX'; font-weight: 500; src: url(/fonts/poppins-latin-500-normal.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2190-2193, U+2212, U+2215, U+FEFF, U+FFFD; font-display: swap; }
+@font-face { font-family: 'PoppinsX'; font-weight: 600; src: url(/fonts/poppins-latin-600-normal.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2190-2193, U+2212, U+2215, U+FEFF, U+FFFD; font-display: swap; }
+@font-face { font-family: 'PoppinsX'; font-weight: 700; src: url(/fonts/poppins-latin-700-normal.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2190-2193, U+2212, U+2215, U+FEFF, U+FFFD; font-display: swap; }
+@font-face { font-family: 'PoppinsX'; font-weight: 400 700; src: url(/fonts/poppins-latin-ext-500-normal.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; font-display: swap; }
+
+body.kitchen {
+  --green: #34d399; --orange: #fbbf24; --red: #fb5a5a;
+  font-family: 'PoppinsX', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; color: #f2fbfb; padding: 1.5rem; display: block; overflow: hidden; height: 100vh;
+  background: radial-gradient(43.75rem 37.5rem at -5% -8%, rgba(14,138,143,.34), transparent 65%), radial-gradient(37.5rem 35rem at 105% 55%, rgba(74,64,184,.2), transparent 65%), radial-gradient(40rem 32.5rem at 45% 112%, rgba(18,167,154,.2), transparent 65%), linear-gradient(135deg, #020405 0%, #05090b 55%, #07090d 100%);
+}
+.kwin { height: calc(100vh - 3rem); display: flex; flex-direction: column; border-radius: 2.25rem; overflow: hidden; border: 1.5px solid rgba(255,255,255,.14); background: linear-gradient(160deg, rgba(255,255,255,.07), rgba(255,255,255,.015)); box-shadow: 0 2.5rem 5.625rem rgba(0,0,0,.6), inset 0 1px 0 rgba(255,255,255,.2); }
+
+/* ---------- header ---------- */
+body.kitchen .k-head { flex: none; background: transparent; border-bottom: 1.5px solid rgba(255,255,255,.09); padding: 0 1.875rem; min-height: 5rem; gap: 1.25rem; }
+.k-head h1 { display: flex; align-items: center; gap: 0.875rem; font-size: 1.625rem; font-weight: 600; letter-spacing: -.01em; }
+.k-head h1 em { font-style: normal; color: rgba(255,255,255,.45); font-weight: 500; font-size: 1.125rem; }
+.k-head .mk { width: 2.375rem; height: 2.375rem; border-radius: 0.75rem; background: linear-gradient(145deg, #19b3b4, #0a6e76); display: grid; place-items: center; box-shadow: 0 0.5rem 1.125rem rgba(14,138,143,.5); flex: none; }
+.legend { gap: 1.25rem; font-size: 0.875rem; color: rgba(255,255,255,.65); }
+.legend i { width: 0.8125rem; height: 0.8125rem; border-radius: 0.25rem; margin-right: 0.5rem; vertical-align: -1px; }
+.k-head .live { color: rgba(255,255,255,.65); font-weight: 500; }
+.k-head .dot.on { background: var(--green); box-shadow: 0 0 0 0.3125rem rgba(52,211,153,.2); }
+body.kitchen .k-head .clock { font-size: 1.875rem; font-weight: 600; letter-spacing: -.02em; }
+body.kitchen .k-head .btn { background: rgba(255,255,255,.09); border: 1.5px solid rgba(255,255,255,.16); color: #e6f6f6; height: 2.625rem; padding: 0 1.125rem; border-radius: 0.875rem; font-weight: 500; font-size: 0.9062rem; }
+body.kitchen .k-head .btn:hover { background: rgba(255,255,255,.16); }
+
+/* ---------- board ---------- */
+body.kitchen .board { grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr) minmax(0, .9fr); gap: 1.25rem; padding: 1.25rem 1.5rem 1.5rem; }
+body.kitchen.rush .board { grid-template-columns: 20rem minmax(0, 1.25fr) minmax(0, 1fr) minmax(0, .9fr); }
+body.kitchen:not(.rush) .tc { display: none; }
+body.kitchen .col, .tc { border-radius: 1.75rem; border: 1.5px solid rgba(255,255,255,.09); }
+body.kitchen .col { background: rgba(255,255,255,.03); }
+body.kitchen .col h2, .tc h2 { padding: 1rem 1.25rem 0.75rem; font-size: 1.25rem; font-weight: 700; letter-spacing: .16em; border-bottom: 0; }
+body.kitchen .col[data-col=preparing] h2 { color: var(--orange); }
+body.kitchen .col[data-col=ready] h2 { color: var(--green); }
+body.kitchen .col[data-col=served] h2 { color: rgba(255,255,255,.5); }
+body.kitchen .col h2 .count, .tc .n { min-width: 2.75rem; text-align: center; padding: 0.1875rem 0; border-radius: 0.75rem; font-size: 1.1875rem; font-weight: 700; letter-spacing: 0; background: rgba(255,255,255,.1); border: 1.5px solid rgba(255,255,255,.16); color: #fff; }
+body.kitchen .col .list { padding: 0.25rem 0.875rem 0.875rem; gap: 0.875rem; scrollbar-width: thin; scrollbar-color: rgba(255,255,255,.2) transparent; }
+body.kitchen .col .none { color: rgba(255,255,255,.35); }
+
+/* ---------- order cards ---------- */
+body.kitchen .ocard { position: relative; overflow: hidden; border: 1.5px solid rgba(255,255,255,.16); border-left-width: 1.5px; border-radius: 1.375rem; padding: 0.9375rem 1.25rem 1rem 1.75rem; gap: 0;
+  background: linear-gradient(160deg, rgba(255,255,255,.11), rgba(255,255,255,.04)); box-shadow: 0 1.125rem 2.5rem rgba(0,0,0,.28), inset 0 1px 0 rgba(255,255,255,.25); }
+body.kitchen .ocard::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 0.5625rem; background: var(--age, rgba(255,255,255,.3)); box-shadow: 0 0 1.375rem var(--age, transparent); }
+body.kitchen .ocard.age-green, body.kitchen .ocard.age-orange { background: linear-gradient(160deg, rgba(255,255,255,.11), rgba(255,255,255,.04)); }
+body.kitchen .ocard.age-red { background: linear-gradient(160deg, rgba(251,90,90,.22), rgba(251,90,90,.07)); border-color: rgba(251,120,120,.5); box-shadow: 0 0 0 1px rgba(251,90,90,.25), 0 1.125rem 2.75rem rgba(251,90,90,.22), inset 0 1px 0 rgba(255,255,255,.22); animation: kpulse 1.6s infinite; }
+@keyframes kpulse { 50% { box-shadow: 0 0 0 1px rgba(251,90,90,.5), 0 1.125rem 3.375rem rgba(251,90,90,.4), inset 0 1px 0 rgba(255,255,255,.22); } }
+body.kitchen .ocard.done { opacity: 1; --age: rgba(255,255,255,.3); }
+.ocard .top { gap: 0.875rem; flex-wrap: nowrap; }
+.ocard .num { font-size: 2.25rem; font-weight: 700; letter-spacing: -.03em; line-height: 1; }
+.ocard .who { display: flex; flex-direction: column; gap: 1px; min-width: 0; white-space: nowrap; }
+.ocard .who .badge { background: none; padding: 0; font-size: 0.75rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--c); filter: brightness(1.3); width: max-content; }
+.ocard .where { color: rgba(255,255,255,.85); font-weight: 500; font-size: 0.9688rem; overflow: hidden; text-overflow: ellipsis; }
+body.kitchen .ocard .timer { height: 2.875rem; padding: 0 1rem; border-radius: 0.9375rem; display: flex; align-items: center; white-space: nowrap; font-size: 1.5rem; font-weight: 700; color: #03150d; background: linear-gradient(135deg, #6ee7b7, #22b983); box-shadow: 0 0.5rem 1.25rem rgba(52,211,153,.4); }
+body.kitchen .ocard.age-orange .timer { color: #2a1700; background: linear-gradient(135deg, #fde68a, #f5a80f); box-shadow: 0 0.5rem 1.25rem rgba(251,191,36,.4); }
+body.kitchen .ocard.age-red .timer { color: #fff; background: linear-gradient(135deg, #ff8a8a, #e23b3b); box-shadow: 0 0.5rem 1.375rem rgba(251,90,90,.55); }
+body.kitchen .ocard.done .timer { background: rgba(255,255,255,.1); color: rgba(255,255,255,.65); font-size: 0.8438rem; font-weight: 600; box-shadow: none; padding: 0 0.75rem; }
+.ocard ul { margin: 0.75rem 0 0; gap: 0.375rem; }
+.ocard li { font-size: 1.3125rem; font-weight: 500; line-height: 1.25; display: flex; gap: 0.625rem; }
+.ocard li b { color: #fcd34d; min-width: 2.375rem; margin: 0; font-weight: 700; }
+.ocard.done li { font-size: 1.125rem; color: rgba(255,255,255,.6); } .ocard.done li b { color: rgba(255,255,255,.4); } .ocard.done .num { color: rgba(255,255,255,.65); font-size: 1.875rem; }
+.ocard .note { margin-top: 0.625rem; padding: 0.5rem 0.875rem; border-radius: 0.8125rem; background: rgba(251,191,36,.14); border: 1.5px solid rgba(251,191,36,.3); color: #fde68a; font-size: 1rem; font-weight: 600; }
+.ocard .acts { margin-top: 0.875rem; gap: 0.625rem; }
+body.kitchen .ocard .acts .btn { height: 3.25rem; padding: 0; border-radius: 1rem; font-size: 1.125rem; font-weight: 700; background: rgba(255,255,255,.07); border: 1.5px solid rgba(255,255,255,.16); color: rgba(255,255,255,.75); }
+body.kitchen .ocard .acts .btn:hover { background: rgba(255,255,255,.14); }
+body.kitchen .ocard .acts .btn.go { background: linear-gradient(135deg, #34d399, #14a37a); border-color: transparent; color: #03150d; box-shadow: 0 0.625rem 1.5rem rgba(52,211,153,.35), inset 0 1px 0 rgba(255,255,255,.4); }
+body.kitchen .ocard .acts .btn.go2 { background: linear-gradient(135deg, #ffffff, #d5eef0); border-color: transparent; color: #06383c; box-shadow: 0 0.625rem 1.5rem rgba(255,255,255,.16); }
+body.kitchen .ocard .acts .btn.ghost { flex: 0 0 6rem; font-size: 0.9375rem; font-weight: 600; }
+body.kitchen .ocard.done .acts .btn { height: 2.75rem; font-size: 0.9375rem; font-weight: 600; }
+
+/* ---------- "To cook now" panel ---------- */
+.tc { display: flex; flex-direction: column; min-height: 0; padding: 0 1rem 1rem; background: linear-gradient(170deg, rgba(18,167,154,.16), rgba(255,255,255,.03)); box-shadow: inset 0 1px 0 rgba(255,255,255,.14); }
+.tc > header { display: flex; align-items: center; justify-content: space-between; }
+.tc > header h2 { padding: 1rem 0.25rem 0.75rem; color: #5eead4; text-transform: uppercase; }
+.tc .n { background: linear-gradient(135deg, #2dd4bf, #0f9d94); color: #02201d; border: 0; box-shadow: 0 0.5rem 1.125rem rgba(45,212,191,.35); }
+.tc .sub { margin: 0; font-size: 0.8125rem; color: rgba(255,255,255,.5); padding: 0 0.25rem 0.875rem; line-height: 1.4; }
+.tc .rows { flex: 1; min-height: 0; overflow-y: auto; display: flex; flex-direction: column; gap: 0.625rem; scrollbar-width: thin; scrollbar-color: rgba(255,255,255,.2) transparent; }
+.tc .tr { display: flex; align-items: center; gap: 0.875rem; padding: 0.6875rem 0.75rem; border-radius: 1.125rem; background: rgba(255,255,255,.07); border: 1.5px solid rgba(255,255,255,.12); flex: none; }
+.tc .tr .q { flex: none; width: 3.375rem; height: 3.375rem; border-radius: 1rem; display: grid; place-items: center; font-size: 1.75rem; font-weight: 700; color: #fff; background: linear-gradient(145deg, rgba(94,234,212,.35), rgba(15,157,148,.25)); border: 1.5px solid rgba(94,234,212,.4); font-variant-numeric: tabular-nums; }
+.tc .tr.top3 .q { background: linear-gradient(145deg, #2dd4bf, #0f9d94); color: #02201d; border-color: transparent; box-shadow: 0 0.5rem 1.125rem rgba(45,212,191,.3); }
+.tc .tr .nm { flex: 1; min-width: 0; font-size: 1.0312rem; font-weight: 500; line-height: 1.25; }
+.tc .tr .bar { height: 0.375rem; border-radius: 6.1875rem; background: rgba(255,255,255,.1); margin-top: 0.5rem; overflow: hidden; }
+.tc .tr .bar i { display: block; height: 100%; border-radius: 6.1875rem; background: linear-gradient(90deg, #2dd4bf, #14b8a6); }
+.tc .none { text-align: center; color: rgba(255,255,255,.4); padding: 1.875rem 0.625rem; }
+.tc .sum { padding-top: 0.875rem; margin-top: 0.625rem; display: flex; justify-content: space-between; font-size: 0.8438rem; color: rgba(255,255,255,.55); border-top: 1.5px solid rgba(255,255,255,.1); }
+
+/* ---------- smaller screens ---------- */
+@media (max-width: 1500px) {
+  body.kitchen .board { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr) minmax(0, 1fr); gap: 0.875rem; padding: 1rem; }
+  body.kitchen.rush .board { grid-template-columns: 14.375rem minmax(0, 1.2fr) minmax(0, 1fr) minmax(0, 1fr); }
+  .ocard li { font-size: 1.0625rem; }
+  .tc .tr .q { width: 2.75rem; height: 2.75rem; font-size: 1.375rem; } .tc .tr .nm { font-size: 0.9062rem; }
+  .legend { display: none; }
+  body.kitchen .ocard { padding: 0.8125rem 0.875rem 0.875rem 1.375rem; min-width: 0; }
+  body.kitchen .ocard .top { flex-wrap: nowrap; gap: 0.5rem; }
+  .ocard .who { flex: 1 1 0; min-width: 0; overflow: hidden; }
+  .ocard .where { font-size: 0.8438rem; }
+  body.kitchen .ocard .timer { font-size: 1.0625rem; height: 2.125rem; padding: 0 0.625rem; border-radius: 0.6875rem; flex: none; }
+  body.kitchen .ocard.done .timer { font-size: 0.7188rem; padding: 0 0.5rem; }
+  .ocard .num { font-size: 1.625rem; }
+  body.kitchen .ocard .acts .btn { font-size: 1rem; height: 3rem; min-width: 0; }
+  body.kitchen .ocard .acts .btn.ghost { flex: 0 0 4rem; font-size: 0.875rem; }
+  body.kitchen .ocard.done .timer { font-size: 0.7812rem; }
+  body.kitchen .col h2 { font-size: 1.0625rem; letter-spacing: .12em; padding: 0.875rem 0.875rem 0.625rem; }
+  body.kitchen .col .list { padding: 0.25rem 0.625rem 0.75rem; }
+}
+@media (max-width: 1100px) {
+  body.kitchen .board, body.kitchen.rush .board { grid-template-columns: 1fr 1fr; overflow-y: auto; }
+  .tc { grid-column: 1 / -1; max-height: 18.75rem; }
+}
+@media (max-width: 900px) {
+  body.kitchen { padding: 0.5rem; height: auto; min-height: 100vh; overflow: auto; }
+  .kwin { height: auto; border-radius: 1.5rem; overflow: visible; }
+  body.kitchen .k-head { padding: 0.625rem 0.875rem; gap: 0.625rem; }
+  body.kitchen .board, body.kitchen.rush .board { grid-template-columns: 1fr; padding: 0.75rem; }
+}
+
+/* cards must never be squeezed or widened by the column: stack them with flex instead of grid */
+body.kitchen .col .list { display: flex; flex-direction: column; }
+body.kitchen .ocard { flex: none; min-width: 0; }
+.ocard li > :not(b) { min-width: 0; overflow-wrap: anywhere; }
+body.kitchen .ocard { grid-template-columns: minmax(0, 1fr); }
+@media (max-width: 1500px) { body.kitchen .ocard.done .top { flex-wrap: wrap; } body.kitchen .ocard.done .timer { margin-left: 0; order: 3; } }
+
+/* Rush mode button */
+body.kitchen .k-head .rush-btn { gap: 0.625rem; }
+.rush-btn i { width: 0.625rem; height: 0.625rem; border-radius: 50%; background: rgba(255,255,255,.35); display: inline-block; transition: .2s; }
+body.kitchen .k-head .rush-btn.on { background: linear-gradient(135deg, #2dd4bf, #0f9d94); border-color: transparent; color: #02201d; font-weight: 600; box-shadow: 0 0.5rem 1.25rem rgba(45,212,191,.35); }
+.rush-btn.on i { background: #02201d; }
+
+/* ======== BIG MONITORS (1600px and up) ========
+   Everything scales with the root font-size (see style.css). The Preparing lane becomes the main
+   area, with 3-4 order cards on every row; Ready and Served stack in a side column. */
+@media (min-width: 1600px) {
+  body.kitchen { padding: 1rem; }
+  .kwin { height: calc(100vh - 2rem); }
+  body.kitchen .board { grid-template-columns: minmax(0, 3fr) minmax(0, 1fr); grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-areas: "prep ready" "prep served"; gap: 1rem; padding: 1.1rem 1.3rem 1.3rem; }
+  body.kitchen.rush .board { grid-template-columns: 17rem minmax(0, 3fr) minmax(0, 1fr); grid-template-areas: "tc prep ready" "tc prep served"; }
+  body.kitchen .tc { grid-area: tc; }
+  body.kitchen .col[data-col=preparing] { grid-area: prep; }
+  body.kitchen .col[data-col=ready] { grid-area: ready; }
+  body.kitchen .col[data-col=served] { grid-area: served; }
+  body.kitchen .col[data-col=preparing] .list { display: grid; grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr)); align-content: start; grid-auto-rows: max-content; gap: 1rem; }
+  body.kitchen .col .list { padding: .25rem 1rem 1rem; gap: .9rem; }
+  body.kitchen .col h2 { font-size: 1.1rem; padding: .9rem 1.1rem .6rem; }
+  /* compact order card so 3-4 fit across */
+  body.kitchen .ocard { padding: .85rem .95rem .95rem 1.35rem; border-radius: 1.15rem; }
+  body.kitchen .ocard .top { flex-wrap: nowrap; gap: .5rem; }
+  body.kitchen .ocard .who { flex: 1 1 0; min-width: 0; overflow: hidden; }
+  .ocard .num { font-size: 1.7rem; }
+  .ocard .where { font-size: .85rem; }
+  .ocard .who .badge { font-size: .68rem; }
+  body.kitchen .ocard .timer { font-size: 1.1rem; height: 2.15rem; padding: 0 .6rem; border-radius: .7rem; flex: none; }
+  body.kitchen .ocard.done .timer { font-size: .72rem; padding: 0 .5rem; }
+  .ocard ul { margin-top: .7rem; gap: .3rem; }
+  .ocard li { font-size: 1.02rem; }
+  .ocard li b { min-width: 1.9rem; }
+  .ocard.done li { font-size: .95rem; } .ocard.done .num { font-size: 1.45rem; }
+  .ocard .note { font-size: .85rem; padding: .4rem .7rem; }
+  body.kitchen .ocard .acts .btn { height: 2.9rem; font-size: 1rem; min-width: 0; }
+  body.kitchen .ocard .acts .btn.ghost { flex: 0 0 3.6rem; font-size: .85rem; }
+  body.kitchen .ocard.done .acts .btn { height: 2.5rem; font-size: .9rem; }
+  .tc .tr .q { width: 2.6rem; height: 2.6rem; font-size: 1.3rem; } .tc .tr .nm { font-size: .95rem; }
+}
+.k-head .mk svg { width: 1.25rem; height: 1.25rem; }
+
+/* served cards: let the badge, table name and 'served at' chip wrap instead of being cut off */
+body.kitchen .ocard.done .top { flex-wrap: wrap; row-gap: .4rem; }
+body.kitchen .ocard.done .who { flex: 1 1 auto; overflow: visible; min-width: 6rem; }
+body.kitchen .ocard.done .timer { margin-left: 0; }
+
+/* header never breaks into two rows when the text is made bigger */
+.k-head h1 { white-space: nowrap; } .k-head h1 em { display: none; }
+body.kitchen .k-head { flex-wrap: nowrap; overflow: hidden; }
+body.kitchen .k-head .clock { white-space: nowrap; }
+@media (max-width: 1899px) { .legend { display: none; } }
+body.kitchen .k-head .sizectl { color: #e6f6f6; background: rgba(255,255,255,.09); border-color: rgba(255,255,255,.16); }
+@media (max-width: 1100px) { body.kitchen .k-head { flex-wrap: wrap; } }
+body.kitchen .k-head .btn, .k-head .live { white-space: nowrap; flex: none; }
+.k-head h1 { flex: 0 1 auto; min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+.kwin { container-type: inline-size; container-name: kw; }
+@container kw (max-width: 78rem) { .k-head #connText { display: none; } body.kitchen .k-head { padding: 0 1rem; gap: .7rem; } body.kitchen .k-head .btn { padding: 0 .8rem; } }
+@container kw (max-width: 62rem) { .k-head #sizeSlot { display: none; } }

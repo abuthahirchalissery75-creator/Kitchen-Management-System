@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kitchen Orders · Sign in</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/theme-login.css">
+</head>
+<body class="login-body">
+  <main class="login-card">
+    <div class="brandrow"><span class="mk"><svg width="24" height="24" viewBox="0 0 28 28" fill="none"><circle cx="12" cy="12" r="8" stroke="#fff" stroke-width="3"/><path d="M18 18l8 8" stroke="#fff" stroke-width="3.2" stroke-linecap="round"/></svg></span><h1 id="brand">Kitchen Orders</h1></div>
+
+    <form id="form" autocomplete="on">
+      <p class="sub">Sign in to continue</p>
+      <label>Username
+        <input name="username" autocomplete="username" autofocus required>
+      </label>
+      <label>Password
+        <input name="password" type="password" autocomplete="current-password" required>
+      </label>
+      <div id="error" class="error" role="alert" hidden></div>
+      <button class="btn primary block" id="go">Sign in</button>
+    </form>
+
+    <form id="changeForm" autocomplete="off" hidden>
+      <p class="muted">Welcome! For security, choose your own new password before continuing.</p>
+      <input name="username" autocomplete="username" hidden>
+      <label id="curWrap">Current password
+        <input name="current" type="password" autocomplete="current-password">
+      </label>
+      <label>New password
+        <input name="next" type="password" autocomplete="new-password" minlength="8" required>
+      </label>
+      <label>Confirm new password
+        <input name="again" type="password" autocomplete="new-password" minlength="8" required>
+      </label>
+      <p class="small" style="margin:0">At least 8 characters, with letters. Use a password you do not use on any other site.</p>
+      <div id="cError" class="error" role="alert" hidden></div>
+      <button class="btn primary block" id="cGo">Save password &amp; continue</button>
+    </form>
+  </main>
+  <script src="/common.js"></script>
+  <script>
+    const $ = (s) => document.querySelector(s);
+    fetch('/api/brand').then((r) => r.json()).then((b) => { if (b && b.name) { $('#brand').textContent = b.name; document.title = b.name + ' · Sign in'; } }).catch(() => {});
+    let typedPassword = '', uname = '';
+    const home = (u) => (u.role === 'admin' ? '/admin.html' : '/kitchen.html');
+    function showChange(user, haveCurrent) {
+      $('#form').hidden = true; $('#changeForm').hidden = false;
+      uname = user.username; $('#changeForm [name=username]').value = uname;
+      $('#curWrap').hidden = haveCurrent; $('#changeForm [name=current]').required = !haveCurrent;
+      $('#changeForm [name=' + (haveCurrent ? 'next' : 'current') + ']').focus();
+    }
+    (async () => {
+      if (!Auth.token) return;
+      try {
+        const me = await api.get('/api/me');
+        if (me.mustChange) showChange(me, false); else location.replace(home(me));
+      } catch (_) {}
+    })();
+    $('#form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const f = new FormData(e.target), err = $('#error'), btn = $('#go');
+      err.hidden = true; btn.disabled = true;
+      try {
+        const r = await api.post('/api/login', { username: f.get('username'), password: f.get('password') });
+        Auth.set(r.token);
+        if (r.user.mustChange) { typedPassword = f.get('password'); showChange(r.user, true); }
+        else location.href = home(r.user);
+      } catch (ex) { err.textContent = ex.message; err.hidden = false; btn.disabled = false; }
+    });
+    $('#changeForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const f = new FormData(e.target), err = $('#cError'), btn = $('#cGo');
+      err.hidden = true;
+      if (f.get('next') !== f.get('again')) { err.textContent = 'The two new passwords do not match'; err.hidden = false; return; }
+      btn.disabled = true;
+      try {
+        await api.put('/api/me/password', { current: typedPassword || f.get('current'), next: f.get('next') });
+        const me = await api.get('/api/me'); location.href = home(me);
+      } catch (ex) { err.textContent = ex.message; err.hidden = false; btn.disabled = false; }
+    });
+  </script>
+</body>
+</html>

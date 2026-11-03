@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kitchen Board</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/theme-black.css">
+</head>
+<body class="kitchen">
+  <div class="kwin">
+  <header class="k-head">
+    <h1 id="title"><span class="mk"><svg width="20" height="20" viewBox="0 0 28 28" fill="none"><circle cx="12" cy="12" r="8" stroke="#fff" stroke-width="3"/><path d="M18 18l8 8" stroke="#fff" stroke-width="3.2" stroke-linecap="round"/></svg></span><span id="titleText">Kitchen</span><em>Kitchen</em></h1>
+    <div class="legend">
+      <span><i style="background:var(--green)"></i><span id="lg-green">under 10 min</span></span>
+      <span><i style="background:var(--orange)"></i><span id="lg-orange">10–20 min</span></span>
+      <span><i style="background:var(--red)"></i><span id="lg-red">over 20 min</span></span>
+    </div>
+    <span class="live"><i class="dot" id="conn"></i><span id="connText">Connecting…</span></span>
+    <span class="clock" id="clock"></span>
+    <span id="sizeSlot"></span>
+    <button class="btn sm rush-btn" id="rushBtn" type="button" aria-pressed="false" title="Show the 'To cook now' totals while it is busy"><i></i><span>Rush mode: Off</span></button>
+    <button class="btn sm" id="soundBtn"></button>
+    <a class="btn sm" id="backLink" href="/admin.html" hidden>← Admin</a>
+    <button class="btn sm" id="logout">Log out</button>
+  </header>
+
+  <main class="board">
+    <aside class="tc" id="tc"><header><h2>To cook now</h2><span class="n" id="tcCount">0</span></header>
+      <p class="sub">Total of each item across all orders in Preparing</p><div class="rows" id="tcRows"></div>
+      <div class="sum"><span id="tcKinds">0 different items</span><span id="tcOrders">0 orders</span></div></aside>
+    <section class="col" data-col="preparing"><h2>Preparing <span class="count">0</span></h2><div class="list"></div></section>
+    <section class="col" data-col="ready"><h2>Ready <span class="count">0</span></h2><div class="list"></div></section>
+    <section class="col" data-col="served"><h2>Served <span class="count">0</span></h2><div class="list"></div></section>
+  </main>
+  </div>
+
+  <script src="/common.js"></script>
+  <script src="/kitchen.js"></script>
+</body>
+</html>

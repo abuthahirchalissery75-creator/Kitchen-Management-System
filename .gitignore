@@ -1,0 +1,24 @@
+# Dependencies
+node_modules/
+
+# Secrets
+.env
+.env.*
+
+# Allow example configuration
+!.env.example
+
+# Database and private sessions
+data/db.json
+data/db.json.tmp
+data/db.json.bak
+data/wa-auth/
+data/wa-auth-purchase/
+
+# Initial login credentials
+data/FIRST-LOGIN.txt
+FIRST-LOGIN.txt
+
+# Logs
+npm-debug.log*
+*.log

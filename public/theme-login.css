@@ -1,0 +1,25 @@
+/* Admin theme: soft glass + teal (Poppins). Loaded only by admin.html, so the kitchen board and login are not affected. */
+@font-face { font-family: 'PoppinsX'; font-weight: 400; src: url(/fonts/poppins-latin-400-normal.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2190-2193, U+2212, U+2215, U+FEFF, U+FFFD; font-display: swap; }
+@font-face { font-family: 'PoppinsX'; font-weight: 500; src: url(/fonts/poppins-latin-500-normal.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2190-2193, U+2212, U+2215, U+FEFF, U+FFFD; font-display: swap; }
+@font-face { font-family: 'PoppinsX'; font-weight: 600; src: url(/fonts/poppins-latin-600-normal.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2190-2193, U+2212, U+2215, U+FEFF, U+FFFD; font-display: swap; }
+@font-face { font-family: 'PoppinsX'; font-weight: 700; src: url(/fonts/poppins-latin-700-normal.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2190-2193, U+2212, U+2215, U+FEFF, U+FFFD; font-display: swap; }
+@font-face { font-family: 'PoppinsX'; font-weight: 400 700; src: url(/fonts/poppins-latin-ext-500-normal.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; font-display: swap; }
+
+body.login-body {
+  font-family: 'PoppinsX', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; color: #12373a; min-height: 100vh; padding: 1.25rem;
+  background: radial-gradient(56rem 38rem at 92% 4%, #c4bde9 0%, transparent 62%), radial-gradient(50rem 44rem at 0% 100%, #9fd0cf 0%, transparent 60%), linear-gradient(135deg, #abd5d6 0%, #d3e6e8 45%, #c9d4ea 100%) fixed;
+}
+.login-card { max-width: 26rem; padding: 2.25rem 2.1rem 2rem; border-radius: 2rem; gap: 1.1rem; background: linear-gradient(160deg, rgba(255,255,255,.72), rgba(255,255,255,.4)); border: 1.5px solid rgba(255,255,255,.85); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); box-shadow: 0 2.5rem 5rem rgba(60,120,130,.22), inset 0 1px 0 rgba(255,255,255,.9); }
+.login-card .brandrow { display: flex; align-items: center; gap: 0.85rem; }
+.login-card .mk { width: 3rem; height: 3rem; border-radius: 1rem; background: linear-gradient(145deg, #12a5a9, #0a6e76); display: grid; place-items: center; box-shadow: 0 0.6rem 1.2rem rgba(14,138,143,.35); flex: none; }
+.login-card h1 { font-size: 1.6rem; font-weight: 600; letter-spacing: -.01em; }
+.login-card .sub { margin: -0.4rem 0 0.2rem; color: #5f8a8c; font-weight: 500; }
+.login-card label { color: #2f6f73; font-weight: 500; font-size: 0.85rem; }
+.login-card input { width: 100%; margin-top: 0.35rem; height: 3rem; padding: 0 1rem; border-radius: 1rem; border: 1.5px solid #fff; background: rgba(255,255,255,.8); font-size: 1rem; color: #12373a; outline: none; box-shadow: inset 0 1px 3px rgba(60,120,130,.1); }
+.login-card input:focus { border-color: #0e8a8f; box-shadow: 0 0 0 4px rgba(14,138,143,.18); background: #fff; }
+.login-card .btn.primary { height: 3.1rem; border: 0; border-radius: 1rem; font-size: 1rem; font-weight: 600; color: #fff; background: linear-gradient(135deg, #0f959a, #0a7078); box-shadow: 0 0.8rem 1.4rem rgba(14,138,143,.32); }
+.login-card .btn.primary:hover { filter: brightness(1.06); }
+.login-card .btn.primary:disabled { opacity: .6; }
+.login-card .small, .login-card .muted { color: #5f8a8c; }
+.login-card .error { border-radius: 0.9rem; }
+@media (max-width: 480px) { .login-card { padding: 1.75rem 1.4rem; border-radius: 1.6rem; } }
