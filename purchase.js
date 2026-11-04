@@ -38,9 +38,7 @@ const STARTER = {
 };
 
 function install(ctx) {
-  const { app, auth, wrap, httpErr, str, uid, nowMs, getDb, save, broadcast, sendWhatsApp, throttled, noteFail, hashPassword, checkPassword, plink, normPhone, mainStatus, dataDir } = ctx;
-  const fs = require('fs'), express = require('express');
-  const photoDir = path.resolve(dataDir, 'uploads', 'purchase'); fs.mkdirSync(photoDir, { recursive: true });
+  const { app, auth, wrap, httpErr, str, uid, nowMs, getDb, save, broadcast, sendWhatsApp, throttled, noteFail, hashPassword, checkPassword, plink, normPhone, mainStatus } = ctx;
   const newToken = () => crypto.randomBytes(24).toString('base64url');
 
   /* ------------------------------ data ------------------------------ */
@@ -142,33 +140,9 @@ function install(ctx) {
     const it = P().items.find((x) => x.id === req.params.id); if (!it) throw httpErr('Not found', 404);
     Object.assign(it, itemFrom(req.body)); touch('items'); res.json(it);
   }));
-  const dropPhoto = (it) => { if (it && it.photo) { try { fs.unlinkSync(path.join(photoDir, path.basename(it.photo))); } catch (_) {} it.photo = ''; } };
-  function sniff(b) {
-    if (b.length > 12 && b[0] === 0xff && b[1] === 0xd8 && b[2] === 0xff) return 'jpg';
-    if (b.length > 12 && b.slice(0, 8).equals(Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]))) return 'png';
-    if (b.length > 12 && b.slice(0, 4).toString() === 'RIFF' && b.slice(8, 12).toString() === 'WEBP') return 'webp';
-    return '';
-  }
-  app.put('/api/purchase/items/:id/photo', auth(['admin']), express.raw({ type: () => true, limit: '1.5mb' }), wrap(async (req, res) => {
-    const it = P().items.find((x) => x.id === req.params.id); if (!it) throw httpErr('Not found', 404);
-    const buf = Buffer.isBuffer(req.body) ? req.body : Buffer.alloc(0), ext = sniff(buf);
-    if (!ext) throw httpErr('Please choose a JPG, PNG or WebP picture');
-    dropPhoto(it);
-    const name = it.id + '-' + nowMs().toString(36) + '.' + ext;
-    fs.writeFileSync(path.join(photoDir, name), buf); it.photo = name; touch('items'); res.json(it);
-  }));
-  app.delete('/api/purchase/items/:id/photo', auth(['admin']), wrap(async (req, res) => {
-    const it = P().items.find((x) => x.id === req.params.id); if (!it) throw httpErr('Not found', 404);
-    dropPhoto(it); touch('items'); res.json(it);
-  }));
-  app.get('/media/p/:file', (req, res) => {
-    if (!/^[a-f0-9]{12}-[a-z0-9]+\.(jpg|png|webp)$/.test(req.params.file)) return res.status(404).end();
-    res.set({ 'Cache-Control': 'public, max-age=604800, immutable', 'X-Content-Type-Options': 'nosniff' });
-    res.sendFile(path.join(photoDir, req.params.file), (e) => { if (e && !res.headersSent) res.status(404).end(); });
-  });
   app.delete('/api/purchase/items/:id', auth(['admin']), wrap(async (req, res) => {
     const p = P(), i = p.items.findIndex((x) => x.id === req.params.id); if (i < 0) throw httpErr('Not found', 404);
-    dropPhoto(p.items[i]); p.items.splice(i, 1); touch('items'); res.json({ ok: true });
+    p.items.splice(i, 1); touch('items'); res.json({ ok: true });
   }));
 
   /* ---- WhatsApp receivers + message ---- */
@@ -275,7 +249,7 @@ function install(ctx) {
     const last = p.orders.filter((o) => o.personId === person.id).slice(-1)[0];
     res.json({
       label: person.label, name: person.name, category: person.category, restaurant,
-      items: p.items.filter((it) => visible(it, person)).map((it) => ({ id: it.id, emoji: it.emoji, photo: it.photo || '', name: it.name, group: it.group, unit: it.unit, step: stepOf(it.unit) })),
+      items: p.items.filter((it) => visible(it, person)).map((it) => ({ id: it.id, emoji: it.emoji, name: it.name, group: it.group, unit: it.unit, step: stepOf(it.unit) })),
       last: last ? { number: last.number, at: last.createdAt, lines: last.lines.map((l) => ({ itemId: l.itemId, qty: l.qty })) } : null,
     });
   }));
